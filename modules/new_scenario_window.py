@@ -25,21 +25,26 @@ class NewScenarioWindow(tk.Toplevel):
 
     def on_ok_btn(self):
         """OK button action."""
-        self.app.title(f'SimPlot3 -- {gv.scenario_name}')
         gv.scenario_name = self.scenario_name_entry.get()
         gv.scenario_filename = self.scenario_filename.get()
         gv.set_scenario_folder(self.scenario_folder.get())
         gv.map_filename = self.map_filename.get()
+        if self.app:
+            self.app.title(f'SimPlot3 -- {gv.scenario_name}')
+            self.app.focus()
         self.destroy()
 
-    def __init__(self, window):
+    def __init__(self, window=None):
         """New Scenario window constructor."""
         super().__init__()
         self.title('New Scenario')
         # self.geometry('400x500')
         # self.minsize(width=400, height=500)
         # self.maxsize(width=400, height=500)
-        self.app = window
+        if window:
+            self.app = window
+        else:
+            self.app = None
 
         # Scenario name and file frame.
         self.name_frame = tk.LabelFrame(self, text='')
@@ -143,3 +148,11 @@ class NewScenarioWindow(tk.Toplevel):
                                 command=self.on_ok_btn)
         self.ok_btn.grid(row=0, column=1)
         self.btn_frame.grid(row=5, sticky=tk.E, padx=5, pady=5)
+
+        self.focus()
+
+
+# Testing.
+if __name__ == '__main__':
+    temp = NewScenarioWindow()
+    temp.mainloop()
