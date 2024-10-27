@@ -1,5 +1,6 @@
 import os
 import tkinter as tk
+import images
 from modules import map_colors as mc
 from modules import map_draw as md
 from modules import global_vars as gv
@@ -21,6 +22,8 @@ class App(tk.Tk):
     def __init__(self):
         """Application window constructor."""
         super().__init__()
+        self.app_icon = tk.PhotoImage(file=images.APP_LOGO_32)
+        self.iconphoto(True, self.app_icon)
         self.title('SimPlot3 -- No Scenario')
         self.geometry('1280x720')
         self.minsize(width=1280, height=720)
