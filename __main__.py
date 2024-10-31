@@ -36,12 +36,10 @@ class App(tk.Tk):
         gv.set_application_folders(os.getcwd())
 
         # Create application main menu.
-
         main_menu = tk.Menu(self)
         self.config(menu=main_menu)
 
         # Create File menus.
-
         file_menu = tk.Menu(main_menu, tearoff=0)
         main_menu.add_cascade(label='File', menu=file_menu)
         file_menu.add_command(label='New Scenario',
@@ -51,7 +49,6 @@ class App(tk.Tk):
         file_menu.add_command(label='Save Scenario')
 
         # Create Customize menus.
-
         customize_menu = tk.Menu(main_menu, tearoff=0)
         main_menu.add_cascade(label='Customize', menu=customize_menu)
         customize_menu.add_command(label='Controls')
@@ -59,20 +56,17 @@ class App(tk.Tk):
         customize_menu.add_command(label='Display Options')
 
         # Create map canvas.
-
         self.map_canvas = tk.Canvas(self, background=mc.background,
                                     width=1070, height=720)
         self.map_canvas.grid(row=0, column=0, rowspan=4,
                              sticky=tk.E + tk.W + tk.N + tk.S)
 
         # Create game information frame.
-
         self.scenario_info_frame = tk.LabelFrame(self, width=200, height=200,
                                                  text='Scenario Information')
         self.scenario_info_frame.grid(row=0, column=1, sticky=tk.E + tk.N)
 
         # Create selected unit frame.
-
         self.selected_unit_frame = tk.LabelFrame(self, width=200, height=300,
                                                  text='Selected Unit '
                                                       'Information')
@@ -80,7 +74,6 @@ class App(tk.Tk):
                                       sticky=tk.E + tk.S + tk.N)
 
         # Create move button frame.
-
         self.move_frame = tk.LabelFrame(self, width=200, height=200,
                                         text='Movement')
         self.move_frame.grid(row=2, column=1, sticky=tk.E + tk.S)

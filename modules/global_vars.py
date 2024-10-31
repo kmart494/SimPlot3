@@ -2,7 +2,6 @@ import datetime
 import os
 
 # Basic scenario information.
-
 app_folder = ''
 app_scenario_folder = ''
 app_map_folder = ''
@@ -12,9 +11,11 @@ scenario_folder = ''
 map_filename = ''
 scenario_date = datetime.date(2024,1,1)
 scenario_time = datetime.time(9, 00, 00)
+wind_direction = 0
+wind_speed = 0
+sea_state = 0
 
 #
-
 units = []
 
 
